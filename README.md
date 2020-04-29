@@ -103,7 +103,7 @@ Let's say you're creating a blog, with articles. Assuming that you already creat
      end
      
      def show
-   		# Instead of using the id, we're using the contentful_id for internal links in articles.
+       # Instead of using the id, we're using the contentful_id for internal links in articles.
        @article = Article.find_by!(contentful_id: params[:id]).render
      end
     
@@ -114,19 +114,17 @@ Let's say you're creating a blog, with articles. Assuming that you already creat
 
    ```erb
    <!-- Display the title -->
-   <h1>
-     <%= @article.title %>
-   </h1>
+   <h1><%= @article.title %></h1>
+   
    <!-- Display rich text/Markdown body content with Kramdown gem -->
-   <p>
-     <%= Kramdown::Document.new(@article.body).to_html.html_safe %>
-   </p>
+   <p><%= Kramdown::Document.new(@article.body).to_html.html_safe %></p>
+   
    <!-- Display images stored on Contentful assets server. -->
    <%= image_tag(@article.image.image_url) %>
+   
    <!-- Display the name of the author (or any fields from any relation) -->
-   <p>
-     <%= @article.author.name %>
-   </p>
+   <p><%= @article.author.name %></p>
+   
    <!-- Link to the article. Here .id return the contentful id -->
    <%= link_to "Article", article_path(@article.id) %>
    ```
