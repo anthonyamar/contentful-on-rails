@@ -15,13 +15,24 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Use React as JavaScript Framework.
 gem 'react-rails'
-
+# Gem for Contentful
+gem 'contentful'
+# Convert Markdown to HTML
+gem 'kramdown'
+# Manage your ENV variables
+gem 'figaro'
+# Watch for bugs
+gem 'bugsnag'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Better debugging
+  gem 'better_errors'
+  gem 'pry'
+  gem 'bullet'
 end
 
 group :development do
@@ -31,6 +42,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Open mail in the browser
+  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
