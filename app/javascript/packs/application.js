@@ -18,3 +18,11 @@ require("channels")
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
+
+import 'bootstrap'
+import "@fortawesome/fontawesome-free";
+import '../stylesheets/application.scss';
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  $('[data-toggle="tooltip"]').tooltip()
+});
